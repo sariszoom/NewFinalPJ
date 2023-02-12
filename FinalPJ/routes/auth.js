@@ -36,6 +36,7 @@ router.post('/login', async (req, res) => {
 
     if (isCorrect) {
       return res.render('index', { user });
+
     } else {
       return res.render('login', { message: 'Username or Password incorrect' });
     }
@@ -44,5 +45,26 @@ router.post('/login', async (req, res) => {
   }
   
 });
+
+
+router.post('/adminlogin', async (req, res) => {
+  console.log(req.body);
+
+  const { username, password } = req.body;
+
+  const adminUser = "zoomadmin"
+  const adminPassword = "12345"
+
+  
+
+  if (username == adminUser && password == adminPassword) {
+    return res.render('adminindex', { admin:adminUser });
+  } else {
+    return res.render('adminlogin', { message: 'Username or Password incorrect' });
+  }
+  
+});
+
+
 
 module.exports = router;

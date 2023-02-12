@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    /* justify-content: center; */
+    background-color: #6fbbf5;
+}
+
+form {
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.wrapLogin {
+    flex-direction: row;
+
+}
+.containerWelcome {
+    position: absolute;
+    margin-left: 200px;
+    justify-content: flex-start;
+}
+.welcome {
+    /* text-align: center; */
+    margin-top: 100px;
+}
+.storagePic {
+    margin-top: 6rem;
+}
+.containerLogin {
+    position: absolute;
+    margin: 120px 100px 50px 1000px;
+    border-radius: 10%;
+    background-color: white;
+    justify-content: flex-end;
+    
+}
+
+.textLogin {
+    text-align: center;
+    font-size: 30px;
+    padding: 1rem;
+}
+
+.inputLogin {
+
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.inputLogin input {
+    
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 20px;
+}
+
+.submitLogin {
+    position: relative;
+    margin: 20px 75px 75px 90px;
+}
+
+form input[type="submit"] {
+    background-color: limegreen;
+    color: white;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    font-size: 20px;
+}
+
+.swapLogin {
+    text-align: center;
+    margin-top: 20%;
+    padding: 0.5rem;
+
+
+}

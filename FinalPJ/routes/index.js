@@ -21,5 +21,16 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/adminlogin', (req, res) => {
+  res.render('adminlogin');
+});
+
+router.get('/index', (req, res) => {
+  res.render('index');
+});
+
+router.get('/storage', (req, res) => {
+  res.render('storage');
+});
 
 module.exports = router;

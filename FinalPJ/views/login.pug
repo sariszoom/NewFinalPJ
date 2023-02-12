@@ -1,24 +1,75 @@
-extend layout
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COmpatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href='/stylesheets/login.css'>
+    <title>Login</title>
 
-block content
-  .form-container
-    form(class="form-signin" method="POST" action="/auth/login")
-      h2 Please Login
+  <body>
+    <form class="form-signin" method="POST" action="/auth/login">
+        <div class="wrapLogin">
+            <div class="containerWelcome">
+                <div class="welcome">
+                    <h1>Welcome to storage system!</h1>
+                </div>
+                <img class="storagePic" src="https://cdn-icons-png.flaticon.com/512/151/151298.png" width="400" height="400">
+            </div>
+            
 
-      .form-group
-        label( for="username" class="sr-only") Username
-        input(type="text" name="username" id="username" class="form-control" placeholder="Username" required)
+            <div class="containerLogin">
+                <div class="textLogin">
+                    <h2>Borrower Login</h2>
+                </div>
 
-      .form-group
-        label(for="password" class="sr-only") Password
-        input(type="password" name="password" id="password" class="form-control" placeholder="Password" required)
+                <div class="inputLogin">
+                    <input type="text" name="username" id="username" placeholder="Enter Username">
 
-      button(class="btn btn-primary btn-block" type="submit") Login
-      
-      if message 
-        p.alert.alert-danger #{message}
+                </div>
+                <div class="inputLogin">
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                </div>
+
+                <div class="submitLogin">
+                    <input type="submit" id="BLogin" value="Login as borrower">
+                </div>
+
+                <div class="swapLogin">
+                    <a href="/adminlogin">login as Admin</a>
+                    <a href="/register">Don't have an account?</a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </form>
+    
+</body>
+</html>
 
 
 
+  //- body 
 
-      a(href="/register", class="btn btn-link") Don't have an account?
+  //-   .form-container
+  //-     form(class="form-signin" method="POST" action="/auth/login")
+  //-       h2 Please Login
+
+  //-       .form-group
+  //-         label( for="username" class="sr-only") Username
+  //-         input(type="text" name="username" id="username" class="form-control" placeholder="Username" required)
+
+  //-       .form-group
+  //-         label(for="password" class="sr-only") Password
+  //-         input(type="password" name="password" id="password" class="form-control" placeholder="Password" required)
+
+  //-       button(class="btn btn-primary btn-block" type="submit") Login
+        
+  //-       if message 
+  //-         p.alert.alert-danger #{message}
+
+  //-       a(href="/register", class="btn btn-link") Don't have an account?
+
+  
