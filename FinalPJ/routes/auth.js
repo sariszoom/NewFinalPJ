@@ -51,14 +51,14 @@ router.post('/adminlogin', async (req, res) => {
   console.log(req.body);
 
   const { username, password } = req.body;
-
+  const adminName = "Saris Bua-iem"
   const adminUser = "zoomadmin"
   const adminPassword = "12345"
 
   
 
   if (username == adminUser && password == adminPassword) {
-    return res.render('adminindex', { admin:adminUser });
+    return res.render('adminindex', { admin:adminName });
   } else {
     return res.render('adminlogin', { message: 'Username or Password incorrect' });
   }
