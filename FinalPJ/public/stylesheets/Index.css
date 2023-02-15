@@ -24,15 +24,86 @@
 }
 
 .navbar {
-    margin-top: 2rem;
+    display: flex;
+    margin-top: 4rem;
     text-align: center;
-    padding: 3rem;
-    font-size: 30px;
+    padding: 10px;
+    font-size: 25px;
     line-height: 1.8;
+    flex-direction: column;
+    
 }
 
 .logout {
-    margin-top: 8rem;
+    margin-top: 15rem;
     text-align: center;
     font-size: 20px;
 }
+
+
+.page {
+    height: 100%;
+    width: 100%;
+    background-color: lightcyan;
+    align-items: center;
+    /* padding-top: 60px; */
+    /* align-items: center; */
+}
+
+.storage {
+    padding-top: 60px;
+    text-align: center;
+
+}
+
+.inpage {
+    display: flex;
+    margin-top: 3rem;
+    text-align: center;
+    justify-content: space-around;
+    
+}
+
+.inputNameItem {
+    padding: 2rem;
+
+}
+
+.inputAmountItem {
+    padding: 2rem;
+
+}
+
+.submitItem {
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    
+}
+
+.inputItem {
+    font-size: 20px;
+    padding: 0.5rem;
+    margin: 30px;
+}
+
+.addButton {
+    font-size: 30px;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    padding: 0.4rem;
+    
+}
+
+.reduceButton {
+    font-size: 30px;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 0.4rem;
+}
+
