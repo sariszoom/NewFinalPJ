@@ -66,6 +66,7 @@ form input[type="submit"] {
     background-color: limegreen;
     color: white;
     border-radius: 10px;
+    border: none;
     margin-top: 1rem;
     padding: 0.4rem;
     font-size: 20px;

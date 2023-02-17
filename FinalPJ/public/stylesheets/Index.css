@@ -64,12 +64,29 @@
     
 }
 
+/* .numAddItem {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+} */
+
 .inputNameItem {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
 
 }
 
 .inputAmountItem {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+
+}
+
+.inputPicItem {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
 
 }
@@ -78,7 +95,7 @@
     margin-top: 40px;
     display: flex;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     
 }
 
@@ -91,7 +108,7 @@
 .addButton {
     font-size: 30px;
     color: #fff;
-    background-color: green;
+    background-color: limegreen;
     border: none;
     border-radius: 10px;
     padding: 0.4rem;
