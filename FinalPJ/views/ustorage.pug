@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/Index.css')
+    title Storage 
+  
+  body 
+    .container
+      .main
+        .user 
+          h1 ชื่อ: #{nameUser.name}
+          h1 ฝ่าย: นักศึกษา
+        
+        .navbar 
+          a(href="/ustorage") คลังอุปกรณ์
+          a(href="/Index") ยืมคืน
+          
+
+      .page 
+        .storage 
+            //- h2 รูป
+            //- h2 ชื่อ
+            //- h2 จำนวน
+            each store in listStorage
+              img(src= store.pic style='width:100px;')
+              p #{store.name} 
+              p #{store.amount} อัน

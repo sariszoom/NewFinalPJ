@@ -55,11 +55,12 @@ router.post('/login', async (req, res) => {
     username
   });
 
+  nameUser = user
   if (user) {
     const isCorrect = bcrypt.compareSync(password, user.password);
 
     if (isCorrect) {
-      return res.render('index', { user });
+      return res.render('index', { nameUser });
 
     } else {
       return res.render('login', { message: 'Username or Password incorrect' });
@@ -75,19 +76,40 @@ router.post('/adminlogin', async (req, res) => {
   console.log(req.body);
 
   const { username, password } = req.body;
-  adminName = "Saris Bua-iem" //global
-  const adminUser = "zoomadmin"
-  const adminPassword = "12345"
 
-  
+  const admin = await Admin.findOne({
+    username,
+    password
+  });
 
-  if (username == adminUser && password == adminPassword) {
-    return res.render('adminIndex', { admin: adminName });
+  nameAdmin = admin
+
+  if (admin) {
+    return res.render('adminIndex', { admin: nameAdmin});
   } else {
     return res.render('adminlogin', { message: 'Username or Password incorrect' });
   }
+
   
 });
+
+// router.post('/adminlogin', async (req, res) => {
+//   console.log(req.body);
+
+//   const { username, password } = req.body;
+//   adminName = "Saris Bua-iem" //global
+//   const adminUser = "zoomadmin"
+//   const adminPassword = "12345"
+
+  
+
+//   if (username == adminUser && password == adminPassword) {
+//     return res.render('adminIndex', { admin: adminName });
+//   } else {
+//     return res.render('adminlogin', { message: 'Username or Password incorrect' });
+//   }
+  
+// });
 
 
 router.post('/addIndex', async (req, res) => {
@@ -105,7 +127,7 @@ router.post('/addIndex', async (req, res) => {
   });
   // await user.save();
   await storage.save();
-  return res.render('adminIndex', { admin: adminName });
+  return res.render('adminIndex', { admin: nameAdmin });
 });
 
 

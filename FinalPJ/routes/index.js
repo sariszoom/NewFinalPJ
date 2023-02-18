@@ -32,24 +32,29 @@ router.get('/index', (req, res) => {
 });
 
 router.get('/adminIndex', (req, res) => {
-  res.render('adminIndex', { admin: adminName });
+  res.render('adminIndex', { admin: nameAdmin });
   // res.render('adminIndex');
 });
 
 router.get('/storage', (req, res) => {
 
   Storage.find({},function(err, store){
-    res.render('storage', { admin: adminName,
+    res.render('storage', { admin: nameAdmin,
       listStorage: store
      });
   })
-
-  
   // res.render('storage');
 });
+router.get('/ustorage', (req, res) => {
 
-router.get('/adminregister', (req, res) => {
-  res.render('adminregister');
+  Storage.find({},function(err, store){
+    res.render('ustorage', { nameUser,
+      listStorage: store
+     });
+  })
 });
+// router.get('/adminregister', (req, res) => {
+//   res.render('adminregister');
+// });
 
 module.exports = router;
