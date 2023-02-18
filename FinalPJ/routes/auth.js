@@ -77,7 +77,7 @@ router.post('/adminIndex', async (req, res) => {
   // if (!name || !username || !password) {
   //   return res.render('register', { message: 'Please try again' });
   // }
-
+  const adminName = "Saris Bua-iem"
   const storage = new Storage({
     pic: itempic,
     name: itemname,
