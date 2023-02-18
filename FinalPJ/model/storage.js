@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const storage = mongoose.Schema({
-  itempic: String,
-  itemname: String,
-  itemamount: String
+  pic: String,
+  name: String,
+  amount: Number
 });
 
 const StorageModel = mongoose.model('Storage', storage);
