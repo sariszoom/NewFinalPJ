@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-COmpatible" content="IE=edge">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" href='/stylesheets/login.css'>
-    <title>admin Login</title>
+    <title>register</title>
 
-  <body>
-    <form class="form-signin" method="POST" action="/auth/adminlogin">
+    <body>
+    <form class="form-signin" method="POST" action="/auth/adminregister">
         <div class="wrapLogin">
             <div class="containerWelcome">
                 <div class="welcome">
@@ -20,53 +20,36 @@
 
             <div class="containerLogin">
                 <div class="textLogin">
-                    <h2>Admin Login</h2>
+                    <h2>Borrower Login</h2>
+                </div>
+
+                <div class="inputLogin">
+                    <input type="text" name="name" id="name" placeholder="Enter name">
+
                 </div>
 
                 <div class="inputLogin">
                     <input type="text" name="username" id="username" placeholder="Enter Username">
 
                 </div>
+
                 <div class="inputLogin">
                     <input type="password" name="password" id="password" placeholder="Enter Password">
                 </div>
 
                 <div class="submitLogin">
-                    <input type="submit" id="BLogin" value="Login as admin">
+                    <input type="submit" id="BLogin" value="Register as Borrower">
                 </div>
 
                 <div class="swapLogin">
-                    <a href="/login">login as borrower </a>
-                    <a href="/adminregister">Don't have an account?</a>
+                    <a href="/login">Have an account?</a>
                 </div>
+
+
             </div>
+
         </div>
     </form>
     
 </body>
 </html>
-
-
-
-  //- body 
-
-  //-   .form-container
-  //-     form(class="form-signin" method="POST" action="/auth/login")
-  //-       h2 Please Login
-
-  //-       .form-group
-  //-         label( for="username" class="sr-only") Username
-  //-         input(type="text" name="username" id="username" class="form-control" placeholder="Username" required)
-
-  //-       .form-group
-  //-         label(for="password" class="sr-only") Password
-  //-         input(type="password" name="password" id="password" class="form-control" placeholder="Password" required)
-
-  //-       button(class="btn btn-primary btn-block" type="submit") Login
-        
-  //-       if message 
-  //-         p.alert.alert-danger #{message}
-
-  //-       a(href="/register", class="btn btn-link") Don't have an account?
-
-  

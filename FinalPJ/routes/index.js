@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const Storage = require('../model/storage')
+
 const isLoggedIn = (req, res, next) => {
   if (!req.user) {
     res.redirect('/login');
@@ -35,8 +37,19 @@ router.get('/adminIndex', (req, res) => {
 });
 
 router.get('/storage', (req, res) => {
-  res.render('storage', { admin: adminName });
+
+  Storage.find({},function(err, store){
+    res.render('storage', { admin: adminName,
+      listStorage: store
+     });
+  })
+
+  
   // res.render('storage');
+});
+
+router.get('/adminregister', (req, res) => {
+  res.render('adminregister');
 });
 
 module.exports = router;

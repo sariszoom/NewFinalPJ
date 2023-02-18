@@ -3,7 +3,9 @@ const bcrypt = require('bcrypt');
 
 const router = express.Router();
 const User = require('../model/user')
+const Admin = require('../model/admin')
 const Storage = require('../model/storage')
+
 
 router.post('/register', async (req, res) => {
   const { username, password, name } = req.body;
@@ -26,6 +28,23 @@ router.post('/register', async (req, res) => {
 
   res.render('index', { nameUser });
 });
+
+// router.post('/adminregister', async (req, res) => {
+//   const { username, password, name } = req.body;
+
+//   const passwordHash = bcrypt.hashSync(password, 10);
+//   const admin = new Admin({
+//     name,
+//     username,
+//     password: passwordHash
+//   });
+
+//   nameAdmin = admin
+
+//   await admin.save();
+
+//   return res.render('adminIndex', { admin: nameAdmin });
+// });
 
 router.post('/login', async (req, res) => {
   console.log(req.body);

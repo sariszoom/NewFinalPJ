@@ -1,28 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-COmpatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <link rel="stylesheet" href='/stylesheets/Borrower.css'>
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="main">
-            <div class="user">
-                <h1>ชื่อ: #{admin}</h1>
-                <h1>ฝ่าย: นักศึกษา</h1>
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/Index.css')
+    title Storage 
+  
+  body 
+    .container
+      .main
+        .user 
+          h1 ชื่อ: #{admin}
+          h1 ฝ่าย: นักศึกษา
+        
+        .navbar 
+          a(href="/storage") คลังอุปกรณ์
+          a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
 
-            </div>
+      .page 
+        .storage 
+            //- h2 รูป
+            //- h2 ชื่อ
+            //- h2 จำนวน
+            each store in listStorage
+              img(src= store.pic style='width:100px;')
+              p #{store.name} 
+              p #{store.amount} อัน
 
-            <div class="navbar">
-                <a href="/storage">คลังอุปกรณ์</a>
-                <a href="/adminIndex">เพิ่ม-ลด อุปกรณ์</a>
 
 
-            </div>
-        </div>
-    </div>
-  </body>
-</html>
+
+
+
+
+
+
+  //- <body>
+  //-   <div class="container">
+  //-       <div class="main">
+  //-           <div class="user">
+  //-               <h1>ชื่อ: #{admin}</h1>
+  //-               <h1>ฝ่าย: นักศึกษา</h1>
+
+  //-           </div>
+
+  //-           <div class="navbar">
+  //-               <a href="/storage">คลังอุปกรณ์</a>
+  //-               <a href="/adminIndex">เพิ่ม-ลด อุปกรณ์</a>
+
+
+  //-           </div>
+  //-         .ShowStorage 
+  //-           each store in listStorage
+  //-             h1 #{store.pic}
+
+          
+  //-       </div>
+  //-   </div>
+  //- </body>
+//- </html>
