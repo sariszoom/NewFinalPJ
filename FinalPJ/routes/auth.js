@@ -14,16 +14,17 @@ router.post('/register', async (req, res) => {
   // }
 
   const passwordHash = bcrypt.hashSync(password, 10);
-  var user = new User({
+  const user = new User({
     name,
     username,
     password: passwordHash
   });
 
+  nameUser = user
 
   await user.save();
 
-  res.render('index', { user });
+  res.render('index', { nameUser });
 });
 
 router.post('/login', async (req, res) => {
@@ -55,14 +56,14 @@ router.post('/adminlogin', async (req, res) => {
   console.log(req.body);
 
   const { username, password } = req.body;
-  var adminName = "Saris Bua-iem"
+  adminName = "Saris Bua-iem" //global
   const adminUser = "zoomadmin"
   const adminPassword = "12345"
 
   
 
   if (username == adminUser && password == adminPassword) {
-    return res.render('adminindex', { admin: adminName });
+    return res.render('adminIndex', { admin: adminName });
   } else {
     return res.render('adminlogin', { message: 'Username or Password incorrect' });
   }
@@ -70,14 +71,14 @@ router.post('/adminlogin', async (req, res) => {
 });
 
 
-router.post('/adminIndex', async (req, res) => {
+router.post('/addIndex', async (req, res) => {
   const { itempic, itemname, itemamount } = req.body;
 
   // simple validation
   // if (!name || !username || !password) {
   //   return res.render('register', { message: 'Please try again' });
   // }
-  const adminName = "Saris Bua-iem"
+
   const storage = new Storage({
     pic: itempic,
     name: itemname,

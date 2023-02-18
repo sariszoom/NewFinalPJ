@@ -29,8 +29,14 @@ router.get('/index', (req, res) => {
   res.render('index');
 });
 
+router.get('/adminIndex', (req, res) => {
+  res.render('adminIndex', { admin: adminName });
+  // res.render('adminIndex');
+});
+
 router.get('/storage', (req, res) => {
-  res.render('storage');
+  res.render('storage', { admin: adminName });
+  // res.render('storage');
 });
 
 module.exports = router;
