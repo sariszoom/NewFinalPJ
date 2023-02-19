@@ -18,15 +18,31 @@ html(lang="en")
           a(href="/storage") คลังอุปกรณ์
           a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
 
+
+      
+
       .page 
-        .storage 
+
+        .storage
+          h1 คลังอุปกรณ์
+
+        .title 
+          h2 รูป
+          h2 อุปกรณ์
+          h2 จำนวน
+
+        .inpageStorage 
+          
             //- h2 รูป
             //- h2 ชื่อ
             //- h2 จำนวน
             each store in listStorage
-              img(src= store.pic style='width:100px;')
-              p #{store.name} 
-              p #{store.amount} อัน
+              .equipmentData 
+                img(src= store.pic style='width:100px;')
+                .nameEquipment
+                  p1 #{store.name}
+                .amountEquipment
+                  p1 #{store.amount} อัน
 
 
 
