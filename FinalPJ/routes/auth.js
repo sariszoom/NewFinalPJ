@@ -115,18 +115,28 @@ router.post('/adminlogin', async (req, res) => {
 router.post('/addIndex', async (req, res) => {
   const { itempic, itemname, itemamount } = req.body;
 
+  // Check if any required fields are missing
   if (!itempic || !itemname || !itemamount) {
-    return res.status(400).send('กรุณากรอกข้อมูลอุปกรณ์ให้ครบ');
+    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
   }
 
-  const storage = new Storage({
-    pic: itempic,
-    name: itemname,
-    amount: itemamount
-  });
+  // Check 
+  const sameItem = await Storage.findOne({ pic: itempic, name: itemname });
 
+  if (sameItem) {
+    // Update 
+    sameItem.amount += parseInt(itemamount);
+    await sameItem.save();
+  } else {
+      const storage = new Storage({
+        pic: itempic,
+        name: itemname,
+        amount: itemamount
+      });
 
-  await storage.save();
+    await storage.save();
+  }
+
   return res.render('adminIndex', { admin: nameAdmin });
 });
 
