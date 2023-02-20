@@ -29,44 +29,37 @@ html(lang="en")
           <div class="addstorage">
             <h1>เพิ่ม-ลด อุปกรณ์</h1>
           </div>
+
+          <div class="titleaddrm">
+            <a1>รูปภาพอุปกรณ์</a1>
+            <a1>ชื่ออุปกรณ์</a1>
+            <a1>จำนวนอุปกรณ์</a1>
+          </div>
+
           <form class="form-signin" method="POST" action="/auth/addIndex">
 
             <div class="inpage">
-              //- <a class="numAddItem">1.</a>
-              //- <a class="numAddItem">2.</a>
-              //- <a class="numAddItem">3.</a>
-              //- <a class="numAddItem">4.</a>
-              
 
-              <div class="inputPicItem">
-                <input class= "inputItem" type="text" name="itempic" id="itempic" placeholder="ใส่URLรูปอุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่URLรูปอุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่URLรูปอุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่URLรูปอุปกรณ์">
+              <div class="inputData">
+                <div class="inputPicItem">
+                  <input class="inputdata" type="text" name="itempic" id="itempic" placeholder="URL :">
 
-              
+                </div>
+
+                <div class="inputNameItem">
+                  <input class="inputdata" type="text" name="itemname" id="itemname" placeholder="ชื่อ :">
+                   
+                </div>
+
+                <div class="inputAmountItem">
+                    <input class="inputdata" type="number" name="itemamount" id="itemamount" placeholder="จำนวน :">
+                
+                </div>
               </div>
 
-              <div class="inputNameItem">
-                <input class= "inputItem" type="text" name="itemname" id="itemname" placeholder="ใส่ชื่ออุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่ชื่ออุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่ชื่ออุปกรณ์">
-                //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่ชื่ออุปกรณ์">
-
-              
-              </div>
-
-              <div class="inputAmountItem">
-
-                  <input class= "inputItem" type="number" name="itemamount" id="itemamount" placeholder="ใส่จำนวนอุปกรณ์">
-                  //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่จำนวนอุปกรณ์">
-                  //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่จำนวนอุปกรณ์">
-                  //- <input class= "inputItem" type="text" name="itemamount" id="itemamount" placeholder="ใส่จำนวนอุปกรณ์">
-              
-              </div>
             </div>
           
-
+              
               <div class="submitItem">
                 <input class="addButton" type="submit" id="item" value="เพิ่ม/ลด">
                 //- <input class="reduceButton" type="submit" id="item" value="ลด">

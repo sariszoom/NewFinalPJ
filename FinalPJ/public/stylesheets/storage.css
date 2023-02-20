@@ -12,7 +12,7 @@
 .main {
     height: 100%;
     width: 30%;
-    background-color: skyblue;
+    background-color: lightskyblue;
     padding-top: 60px;
     align-items: center;
     
@@ -44,81 +44,73 @@
 .page {
     height: 100%;
     width: 100%;
-    background-color: #c2e5f0;
+    background-color: lightcyan;
     align-items: center;
-
+    /* padding-top: 60px; */
+    /* align-items: center; */
 }
 
-.addstorage {
-    padding: 60px;
+.storage {
+    padding-top: 60px;
     text-align: center;
-    background-color: #528aae;
-    
+
 }
 
-.titleaddrm {
+.title  {
     display: flex;
-
-    padding: 1rem;
+    margin-top: 3rem;
+    text-align: center;
     justify-content: space-around;
-    background-color: #73a5c6;
-
-    font-size: 30px;
+    background-color: #70c2d0;
 }
 
-.inpage {
+
+
+.inpageStorage {
     display: flex;
     flex-direction: column;
-    padding: 4rem;
-    background-color: #91bad6;
+    padding: 1rem;
+    background-color: #afdde5;
 }
 
-.inputData {
+.equipmentData {
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     border-top: 2px;
-}
-
-.inputNameItem,.inputAmountItem,.inputPicItem {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    color: blue;
+    /* background-color: darkblue; */
 
 }
 
+img {
+    height: 100px;
+    width: 100px;
+}
 
-.submitItem {
-    margin-top: 3rem;
-    display: flex;
+.nameEquipment {
+    height: 100px;
+    width: 200px;
+    /* vertical-align: middle; */
     text-align: center;
+
+    display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Sarabun', sans-serif;
     
 }
 
-.inputdata {
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 0.3rem;
-    font-size: 20px;
-
-}
-
-.addButton {
-    font-size: 30px;
-    color: #fff;
-    background-color: limegreen;
-    border: none;
-    border-radius: 10px;
-    padding: 0.4rem; 
+.amountEquipment {
+    height: 100px;
+    width: 120px;
+    /* background-color: blue; */
+    text-align: center;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Sarabun', sans-serif;
 }
-
-
-
-
-
-
-
