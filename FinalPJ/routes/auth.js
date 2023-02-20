@@ -115,17 +115,17 @@ router.post('/adminlogin', async (req, res) => {
 router.post('/addIndex', async (req, res) => {
   const { itempic, itemname, itemamount } = req.body;
 
-  // simple validation
-  // if (!name || !username || !password) {
-  //   return res.render('register', { message: 'Please try again' });
-  // }
+  if (!itempic || !itemname || !itemamount) {
+    return res.status(400).send('กรุณากรอกข้อมูลอุปกรณ์ให้ครบ');
+  }
 
   const storage = new Storage({
     pic: itempic,
     name: itemname,
     amount: itemamount
   });
-  // await user.save();
+
+
   await storage.save();
   return res.render('adminIndex', { admin: nameAdmin });
 });
