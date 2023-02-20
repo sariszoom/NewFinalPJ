@@ -48,6 +48,7 @@ form {
 
     margin-top: 2.5rem;
     text-align: center;
+
 }
 
 .inputLogin input {
@@ -60,6 +61,7 @@ form {
 .submitLogin {
     position: relative;
     margin: 20px 75px 75px 90px;
+
 }
 
 form input[type="submit"] {
@@ -70,6 +72,7 @@ form input[type="submit"] {
     margin-top: 1rem;
     padding: 0.4rem;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .swapLogin {
