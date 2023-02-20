@@ -53,6 +53,14 @@ router.get('/ustorage', (req, res) => {
      });
   })
 });
+
+router.get('/logout', (req, res) => {
+  // req.session.destroy();
+  res.redirect('/login');
+});
+
+
+
 // router.get('/adminregister', (req, res) => {
 //   res.render('adminregister');
 // });
