@@ -15,16 +15,30 @@ html(lang="en")
           h1 ฝ่าย: นักศึกษา
         
         .navbar 
-          a(href="/ustorage") คลังอุปกรณ์
           a(href="/Index") ยืมคืน
+          a(href="/ustorage") คลังอุปกรณ์
+
           
 
       .page 
-        .storage 
+
+        .storage
+          h1 คลังอุปกรณ์
+
+        .title 
+          h2 รูป
+          h2 อุปกรณ์
+          h2 จำนวน
+
+        .inpageStorage 
+          
             //- h2 รูป
             //- h2 ชื่อ
             //- h2 จำนวน
             each store in listStorage
-              img(src= store.pic style='width:100px;')
-              p #{store.name} 
-              p #{store.amount} อัน
+              .equipmentData 
+                img(src= store.pic style='width:100px;')
+                .nameEquipment
+                  p1 #{store.name}
+                .amountEquipment
+                  p1 #{store.amount} อัน
