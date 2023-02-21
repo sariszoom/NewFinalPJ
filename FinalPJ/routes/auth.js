@@ -117,7 +117,7 @@ router.post('/addIndex', async (req, res) => {
 
   // Check if any required fields are missing
   if (!itempic || !itemname || !itemamount) {
-    return res..status(400)send('กรุณากรอกข้อมูลให้ครบ');
+    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
   }
 
   // Check 
