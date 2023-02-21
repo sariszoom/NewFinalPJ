@@ -117,7 +117,7 @@ router.post('/addIndex', async (req, res) => {
 
   // Check if any required fields are missing
   if (!itempic || !itemname || !itemamount) {
-    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
+    return res..status(400)send('กรุณากรอกข้อมูลให้ครบ');
   }
 
   // Check 
@@ -126,7 +126,14 @@ router.post('/addIndex', async (req, res) => {
   if (sameItem) {
     // Update 
     sameItem.amount += parseInt(itemamount);
-    await sameItem.save();
+
+    if (sameItem.amount == 0) {
+      await sameItem.delete()
+    }
+    else {
+      await sameItem.save();
+    }
+
   } 
   else {
     const storage = new Storage({
