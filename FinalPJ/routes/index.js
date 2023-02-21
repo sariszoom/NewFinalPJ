@@ -45,6 +45,7 @@ router.get('/storage', (req, res) => {
   })
   // res.render('storage');
 });
+
 router.get('/ustorage', (req, res) => {
 
   Storage.find({},function(err, store){

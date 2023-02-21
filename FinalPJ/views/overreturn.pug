@@ -10,38 +10,34 @@ html(lang="en")
     body 
     .container
         .main
-        .user 
-            h1 ชื่อ: #{admin.name}
-            h1 ฝ่าย: ผู้ดูแล
-        
-        .navbar 
-            a(href="/storage") คลังอุปกรณ์
-            a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
-
-        .logout
-            a(href="/logout") Logout 
-
-        
-
-        .page 
-
-        .storage
-            h1 ค้างการคืน
-
-        .title 
-            a1  รูป
-            a1  อุปกรณ์
-            a1  จำนวน
-
-        .inpageStorage 
+            .user 
+                h1 ชื่อ: #{admin.name}
+                h1 ฝ่าย: ผู้ดูแล
             
-            //- h2 รูป
-            //- h2 ชื่อ
-            //- h2 จำนวน
-            each store in listStorage
-                .equipmentData 
-                img(src= store.pic)
-                .nameEquipment
-                    p1 #{store.name}
-                .amountEquipment
-                    p1 #{store.amount} อัน
+            .navbar 
+                a(href="/storage") คลังอุปกรณ์
+                a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
+
+            .logout
+                a(href="/logout") Logout 
+            
+
+            .page 
+
+                .storage
+                    h1 ค้างการคืน
+
+                .title 
+                    a1  รูป
+                    a1  อุปกรณ์
+                    a1  จำนวน
+
+                .inpageStorage 
+
+                    each store in listStorage
+                        .equipmentData 
+                            img(src= store.pic)
+                            .nameEquipment
+                                p1 #{store.name}
+                            .amountEquipment
+                                p1 #{store.amount} อัน
