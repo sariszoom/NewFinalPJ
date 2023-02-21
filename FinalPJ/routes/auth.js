@@ -5,6 +5,7 @@ const router = express.Router();
 const User = require('../model/user')
 const Admin = require('../model/admin')
 const Storage = require('../model/storage')
+const UserStorage = require('../model/userstorage')
 
 
 router.post('/register', async (req, res) => {
@@ -148,6 +149,42 @@ router.post('/addIndex', async (req, res) => {
   return res.render('adminIndex', { admin: nameAdmin });
 });
 
+
+router.post('/addIndex', async (req, res) => {
+  const { itempic, itemname, itemamount } = req.body;
+
+  // Check if any required fields are missing
+  if (!itempic || !itemname || !itemamount) {
+    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
+  }
+
+  // Check 
+  const sameItem = await UserStorage.findOne({ pic: itempic, name: itemname });
+
+  if (sameItem) {
+    // Update 
+    sameItem.amount += parseInt(itemamount);
+
+    if (sameItem.amount == 0) {
+      await sameItem.delete()
+    }
+    else {
+      await sameItem.save();
+    }
+
+  } 
+  else {
+    const storage = new UserStorage({
+      pic: itempic,
+      name: itemname,
+      amount: itemamount
+    });
+
+    await storage.save();
+  }
+
+  return res.render('index');
+});
 
 
 module.exports = router;
