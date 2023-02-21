@@ -60,8 +60,11 @@
     display: flex;
     margin-top: 3rem;
     text-align: center;
+    
     justify-content: space-around;
     background-color: #70c2d0;
+
+    font-size: 30px;
 }
 
 
@@ -91,7 +94,6 @@ img {
 .nameEquipment {
     height: 100px;
     width: 200px;
-    /* vertical-align: middle; */
     text-align: center;
 
     display: flex;

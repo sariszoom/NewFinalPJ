@@ -12,7 +12,7 @@
 .main {
     height: 100%;
     width: 30%;
-    background-color: skyblue;
+    background-color: lightskyblue;
     padding-top: 60px;
     align-items: center;
     
@@ -44,24 +44,24 @@
 .page {
     height: 100%;
     width: 100%;
-    background-color: #c2e5f0;
+    background-color: lightcyan;
     align-items: center;
 
 }
 
-.addstorage {
+.pagename {
     padding: 60px;
     text-align: center;
-    background-color: #528aae;
     
 }
 
-.titleaddrm {
+.title {
     display: flex;
-
-    padding: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    
     justify-content: space-around;
-    background-color: #73a5c6;
+    background-color: #70c2d0;
 
     font-size: 30px;
 }
@@ -70,7 +70,7 @@
     display: flex;
     flex-direction: column;
     padding: 4rem;
-    background-color: #91bad6;
+    background-color: #afdde5;
 }
 
 .inputData {
@@ -85,18 +85,9 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    color: blue;
 
 }
 
-
-.submitItem {
-    margin-top: 3rem;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    
-}
 
 .inputdata {
     border-radius: 10px;
@@ -104,6 +95,15 @@
     padding: 0.3rem;
     font-size: 20px;
 
+}
+
+.submitItem {
+    /* margin-top: 3rem; */
+    margin-top: 7rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
 }
 
 .addButton {

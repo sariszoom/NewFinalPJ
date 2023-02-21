@@ -1,35 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-COmpatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <link rel="stylesheet" href='/stylesheets/Index.css'>
-    <title>Index</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="main">
-            <div class="user">
-                <h1>ชื่อ: #{nameUser.name}</h1>
-                <h1>ฝ่าย: นักศึกษา</h1>
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/Index.css')
+    title Storage 
+  
+  body 
+    .container
+      .main
+        .user 
+          h1 ชื่อ: #{nameUser.name}
+          h1 ฝ่าย: นักศึกษา
 
-            </div>
+        .navbar
+          a(href="/index") ยืม/คืน
+          a(href="/ustorage") คลังอุปกรณ์
+          a(href="/ustorage") ค้างการคืน
 
-            <div class="navbar">
-                <a href="/index">ยืม/คืน</a></li>
-                <a href="/ustorage">คลังอุปกรณ์</a></li>
+        .logout
+          a(href="/logout") Logout 
 
-            </div>
 
-            <div class="logout">
-                <a href="/logout">Logout</a>
-            </div> 
-        </div>
-    </div>
-  </body>
-</html>
+      .page 
 
+        .pagename
+          h1 ยืม/คืน อุปกรณ์
+
+        .title 
+          a1  รูปภาพอุปกรณ์
+          a1  ชื่ออุปกรณ์
+          a1  จำนวนอุปกรณ์
+
+        .inpage 
+          .inputData 
+            .inputPicItem 
+              input(
+                class="inputdata"
+                type="number"
+                name="itempic" 
+                id="itempic" 
+                placeholder="URL :"
+              )
+            
+            .inputNameItem
+              input(
+                class="inputdata"
+                type="number"
+                name="itemname" 
+                id="itemname" 
+                placeholder="ชื่อ :"
+              )
+
+            .inputAmountItem
+              input(
+                class="inputdata"
+                type="number"
+                name="itemamount"
+                id="itemamount"
+                placeholder="จำนวน :"
+              )
+
+          .submitItem
+              input(
+                class="addButton"
+                type='submit'
+                id="item" 
+                value="เพิ่ม/ลด"
+            )
 
 
 

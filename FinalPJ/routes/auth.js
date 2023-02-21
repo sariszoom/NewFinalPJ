@@ -127,12 +127,13 @@ router.post('/addIndex', async (req, res) => {
     // Update 
     sameItem.amount += parseInt(itemamount);
     await sameItem.save();
-  } else {
-      const storage = new Storage({
-        pic: itempic,
-        name: itemname,
-        amount: itemamount
-      });
+  } 
+  else {
+    const storage = new Storage({
+      pic: itempic,
+      name: itemname,
+      amount: itemamount
+    });
 
     await storage.save();
   }
