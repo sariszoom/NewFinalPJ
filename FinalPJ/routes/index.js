@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const Storage = require('../model/storage')
+const BorrowStorage = require('../model/storage')
 
 const isLoggedIn = (req, res, next) => {
   if (!req.user) {
@@ -53,6 +54,16 @@ router.get('/ustorage', (req, res) => {
       listStorage: store
      });
   })
+});
+
+router.get('/overreturn', (req, res) => {
+
+  BorrowStorage.find({},function(err, store){
+    res.render('overreturn', { nameUser,
+      listStorage: store
+     });
+  })
+  // res.render('storage');
 });
 
 router.get('/logout', (req, res) => {

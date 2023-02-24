@@ -11,13 +11,13 @@ html(lang="en")
     .container
       .main
         .user 
-          //- h1 ชื่อ: #{nameUser.name}
+          h1 ชื่อ: #{nameUser.name}
           h1 ฝ่าย: นักศึกษา
 
         .navbar
           a(href="/index") ยืม/คืน
           a(href="/ustorage") คลังอุปกรณ์
-          a(href="/ustorage") ค้างการคืน
+          a(href="/overreturn") ค้างการคืน
 
         .logout
           a(href="/logout") Logout 
@@ -33,51 +33,52 @@ html(lang="en")
           a1 ชื่ออุปกรณ์
           a1 จำนวนอุปกรณ์
 
-        .inpage 
-          .inputData 
-            .inputPicItem 
-              input(
-                class="inputdata"
-                type="text"
-                name="itempic" 
-                id="itempic" 
-                placeholder="URL :"
-              )
+        form(class="form-signin" method="POST" action="/auth/addIndex")
+          .inpage 
+            .inputData 
+              .inputPicItem 
+                input(
+                  class="inputdata"
+                  type="text"
+                  name="itempic" 
+                  id="itempic" 
+                  placeholder="URL :"
+                )
 
-            //- .inputNameItem
-            //-   input(
-            //-     class="inputdata"
-            //-     type="taxt"
-            //-     name="itemname" 
-            //-     id="itemname" 
-            //-     placeholder="ประเภท :"
-            //-   )
-            
-            .inputNameItem
-              input(
-                class="inputdata"
-                type="taxt"
-                name="itemname" 
-                id="itemname" 
-                placeholder="ชื่อ :"
-              )
+              //- .inputNameItem
+              //-   input(
+              //-     class="inputdata"
+              //-     type="taxt"
+              //-     name="itemname" 
+              //-     id="itemname" 
+              //-     placeholder="ประเภท :"
+              //-   )
+              
+              .inputNameItem
+                input(
+                  class="inputdata"
+                  type="taxt"
+                  name="itemname" 
+                  id="itemname" 
+                  placeholder="ชื่อ :"
+                )
 
-            .inputAmountItem
-              input(
-                class="inputdata"
-                type="number"
-                name="itemamount"
-                id="itemamount"
-                placeholder="จำนวน :"
-              )
+              .inputAmountItem
+                input(
+                  class="inputdata"
+                  type="number"
+                  name="itemamount"
+                  id="itemamount"
+                  placeholder="จำนวน :"
+                )
 
-          .submitItem
-              input(
-                class="addButton"
-                type='submit'
-                id="item" 
-                value="เพิ่ม/ลด"
-              )
+            .submitItem
+                input(
+                  class="addButton"
+                  type='submit'
+                  id="item" 
+                  value="เพิ่ม/ลด"
+                )
 
 
 

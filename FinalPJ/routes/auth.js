@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require('../model/user')
 const Admin = require('../model/admin')
 const Storage = require('../model/storage')
-const UserStorage = require('../model/userstorage')
+const BorrowStorage = require('../model/borrowstorage')
 
 
 router.post('/register', async (req, res) => {
@@ -131,6 +131,10 @@ router.post('/addIndex', async (req, res) => {
     if (sameItem.amount == 0) {
       await sameItem.delete()
     }
+    // else if (sameItem.amount < 0) {
+    //   return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+
+    // }
     else {
       await sameItem.save();
     }
@@ -150,37 +154,41 @@ router.post('/addIndex', async (req, res) => {
 });
 
 
-router.post('/addIndex', async (req, res) => {
+router.post('/borrowIndex', async (req, res) => {
   const { itempic, itemname, itemamount } = req.body;
 
   // Check if any required fields are missing
-  if (!itempic || !itemname || !itemamount) {
-    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
-  }
+  // if (!itempic || !itemname || !itemamount) {
+  //   return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
+  // }
 
   // Check 
-  const sameItem = await UserStorage.findOne({ pic: itempic, name: itemname });
+  const sameItem = await BorrowStorage.findOne({ pic: itempic, name: itemname });
 
   if (sameItem) {
     // Update 
     sameItem.amount += parseInt(itemamount);
 
-    if (sameItem.amount == 0) {
-      await sameItem.delete()
+    if (sameItem.amount == 0 ) {
+      await sameItem.delete();
     }
+    // else if (sameItem.amount < 0) {
+    //   return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+      
+    // }
     else {
       await sameItem.save();
     }
 
   } 
   else {
-    const storage = new UserStorage({
+    const borrowstorage = new BorrowStorage({
       pic: itempic,
       name: itemname,
       amount: itemamount
     });
 
-    await storage.save();
+    await borrowstorage.save();
   }
 
   return res.render('index');

@@ -48,10 +48,9 @@
 
 }
 
-.pagename {
+.page .pagename {
     padding: 60px;
     text-align: center;
-    
 }
 
 .title {

@@ -4,41 +4,45 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='/stylesheets/Index.css')
-    title Overreturn
+    link(rel='stylesheet', href='/stylesheets/storage.css')
+    title overreturn
   
-    body 
+  body 
     .container
-        .main
-            .user 
-                h1 ชื่อ: #{admin.name}
-                h1 ฝ่าย: ผู้ดูแล
-            
-            .navbar 
-                a(href="/storage") คลังอุปกรณ์
-                a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
+      .main
+        .user 
+          h1 ชื่อ: #{nameUser.name}
+          h1 ฝ่าย: นักศึกษา
 
-            .logout
-                a(href="/logout") Logout 
-            
+        .navbar
+          a(href="/index") ยืม/คืน
+          a(href="/ustorage") คลังอุปกรณ์
+          a(href="/overreturn") ค้างการคืน
 
-            .page 
+        .logout
+          a(href="/logout") Logout 
 
-                .storage
-                    h1 ค้างการคืน
 
-                .title 
-                    a1  รูป
-                    //- a1  ประเภท
-                    a1  อุปกรณ์
-                    a1  จำนวน
+      .page 
 
-                .inpageStorage 
+        .storage
+          h1 คลังอุปกรณ์
 
-                    each store in listStorage
-                        .equipmentData 
-                            img(src= store.pic)
-                            .nameEquipment
-                                p1 #{store.name}
-                            .amountEquipment
-                                p1 #{store.amount} อัน
+        .title 
+          a1 รูป
+          //- a1 ประเภท
+          a1 อุปกรณ์
+          a1 จำนวน
+
+        .inpageStorage 
+          
+            //- h2 รูป
+            //- h2 ชื่อ
+            //- h2 จำนวน
+            each store in listStorage
+              .equipmentData 
+                img(src= store.pic)
+                .nameEquipment
+                  p1 #{store.name}
+                .amountEquipment
+                  p1 #{store.amount}
