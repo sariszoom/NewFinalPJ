@@ -26,10 +26,9 @@ html(lang="en")
       .page 
 
         .storage
-          h1 คลังอุปกรณ์
+          h1 ค้างการคืน
 
         .title 
-          a1 รูป
           //- a1 ประเภท
           a1 อุปกรณ์
           a1 จำนวน
@@ -40,9 +39,9 @@ html(lang="en")
             //- h2 ชื่อ
             //- h2 จำนวน
             each store in listStorage
-              .equipmentData 
-                img(src= store.pic)
-                .nameEquipment
-                  p1 #{store.name}
-                .amountEquipment
-                  p1 #{store.amount}
+              if store.Nameuser === nameUser.name
+                .equipmentData 
+                  .nameEquipment
+                    p1 #{store.name}
+                  .amountEquipment
+                    p1 #{store.amount}

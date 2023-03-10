@@ -165,7 +165,8 @@ router.post('/borrowIndex', async (req, res) => {
   // Check 
   // const sameItem = await BorrowStorage.findOne({name: itemname});
   const sameItem = await BorrowStorage.findOne({Nameuser : nameUser.name , name: itemname});
-  // console.log(nameUser.name)
+  const storageItem = await Storage.findOne({ name: itemname });
+
   if (sameItem) {
     // Update 
     sameItem.amount += parseInt(itemamount);
@@ -181,6 +182,9 @@ router.post('/borrowIndex', async (req, res) => {
       await sameItem.save();
     }
 
+    storageItem.amount -= parseInt(itemamount);
+    await storageItem.save();
+    
   } 
   else {
     const borrowstorage = new BorrowStorage({
@@ -189,6 +193,8 @@ router.post('/borrowIndex', async (req, res) => {
       amount: itemamount
     });
 
+    storageItem.amount -= parseInt(itemamount);
+    await storageItem.save();
     await borrowstorage.save();
   }
 

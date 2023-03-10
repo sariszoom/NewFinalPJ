@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const Storage = require('../model/storage')
-const BorrowStorage = require('../model/storage')
+const BorrowStorage = require('../model/borrowstorage')
 
 const isLoggedIn = (req, res, next) => {
   if (!req.user) {
