@@ -157,7 +157,7 @@ router.post('/addIndex', async (req, res) => {
 router.post('/borrowIndex', async (req, res) => {
   const { itemname, itemamount } = req.body;
 
-  // Check if any required fields are missing
+  // Check missing
   // if (!itempic || !itemname || !itemamount) {
   //   return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
   // }
@@ -171,19 +171,22 @@ router.post('/borrowIndex', async (req, res) => {
     // Update 
     sameItem.amount += parseInt(itemamount);
 
+    storageItem.amount -= parseInt(itemamount);
+    await storageItem.save();
+
     if (sameItem.amount == 0 ) {
       await sameItem.delete();
     }
-    // else if (sameItem.amount < 0) {
-    //   return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
-      
-    // }
+    else if (storageItem.amount < 0) {
+      storageItem.amount += parseInt(itemamount);
+      await storageItem.save();
+
+      return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+
+    }
     else {
       await sameItem.save();
     }
-
-    storageItem.amount -= parseInt(itemamount);
-    await storageItem.save();
     
   } 
   else {
