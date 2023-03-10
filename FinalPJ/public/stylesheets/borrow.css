@@ -1,0 +1,123 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.main {
+  height: 100%;
+  width: 30%;
+  background-color: lightskyblue;
+  padding-top: 60px;
+  align-items: center;
+}
+
+.main .user {
+  text-align: center;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  margin-top: 4rem;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  line-height: 1.8;
+  flex-direction: column;
+  
+}
+
+.logout {
+  margin-top: 15rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.page {
+  height: 100%;
+  width: 100%;
+  background-color: lightcyan;
+  align-items: center;
+
+}
+
+.page .pagename {
+  padding: 60px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  margin-top: 3rem;
+  text-align: center;
+  
+  justify-content: space-around;
+  background-color: #70c2d0;
+
+  font-size: 30px;
+}
+
+.inpage {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  background-color: #afdde5;
+}
+
+.inputData {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  justify-content: space-between;
+  border-top: 2px;
+}
+
+.inputNameItem,.inputAmountItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+}
+
+
+.inputdata {
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 0.3rem;
+  font-size: 20px;
+
+}
+
+.submitItem {
+  /* margin-top: 3rem; */
+  margin-top: 7rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  
+}
+
+.addButton {
+  font-size: 30px;
+  color: #fff;
+  background-color: limegreen;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 0.4rem; 
+  
+}
+
+
+
+
+
+
+

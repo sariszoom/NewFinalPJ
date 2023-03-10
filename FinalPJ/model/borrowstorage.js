@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const borrowstorage = mongoose.Schema({
   Nameuser: String,
-  pic: String,
   name: String,
   amount: Number
 });

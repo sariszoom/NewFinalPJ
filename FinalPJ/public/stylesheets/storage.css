@@ -5,12 +5,12 @@
 }
 
 .container {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
 }
 
 .main {
-    height: 100%;
+    height: auto;
     width: 30%;
     background-color: lightskyblue;
     padding-top: 60px;

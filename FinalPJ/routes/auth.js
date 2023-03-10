@@ -155,7 +155,7 @@ router.post('/addIndex', async (req, res) => {
 
 
 router.post('/borrowIndex', async (req, res) => {
-  const { itempic, itemname, itemamount } = req.body;
+  const { itemname, itemamount } = req.body;
 
   // Check if any required fields are missing
   // if (!itempic || !itemname || !itemamount) {
@@ -163,8 +163,9 @@ router.post('/borrowIndex', async (req, res) => {
   // }
 
   // Check 
-  const sameItem = await BorrowStorage.findOne({ pic: itempic, name: itemname });
-
+  // const sameItem = await BorrowStorage.findOne({name: itemname});
+  const sameItem = await BorrowStorage.findOne({Nameuser : nameUser.name , name: itemname});
+  // console.log(nameUser.name)
   if (sameItem) {
     // Update 
     sameItem.amount += parseInt(itemamount);
@@ -183,7 +184,7 @@ router.post('/borrowIndex', async (req, res) => {
   } 
   else {
     const borrowstorage = new BorrowStorage({
-      pic: itempic,
+      Nameuser: nameUser.name,
       name: itemname,
       amount: itemamount
     });
