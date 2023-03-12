@@ -11,10 +11,9 @@ const BorrowStorage = require('../model/borrowstorage')
 router.post('/register', async (req, res) => {
   const { username, password, name } = req.body;
 
-  // simple validation
-  // if (!name || !username || !password) {
-  //   return res.render('register', { message: 'Please try again' });
-  // }
+  if (!name || !username || !password) {
+    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
+  }
 
   const passwordHash = bcrypt.hashSync(password, 10);
   const user = new User({
@@ -116,7 +115,7 @@ router.post('/adminlogin', async (req, res) => {
 router.post('/addIndex', async (req, res) => {
   const { itempic, itemname, itemamount } = req.body;
 
-  // Check if any required fields are missing
+  //missing
   if (!itempic || !itemname || !itemamount) {
     return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
   }
@@ -157,35 +156,42 @@ router.post('/addIndex', async (req, res) => {
 router.post('/borrowIndex', async (req, res) => {
   const { itemname, itemamount } = req.body;
 
-  // Check missing
-  // if (!itempic || !itemname || !itemamount) {
-  //   return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
-  // }
+  if (!itemname || !itemamount) {
+    return res.status(400).send('กรุณากรอกข้อมูลให้ครบ');
+  }
 
   // Check 
   // const sameItem = await BorrowStorage.findOne({name: itemname});
   const sameItem = await BorrowStorage.findOne({Nameuser : nameUser.name , name: itemname});
   const storageItem = await Storage.findOne({ name: itemname });
 
-  if (sameItem) {
-    // Update 
-    sameItem.amount += parseInt(itemamount);
+  if (!storageItem) {
+    return res.status(400).send('ไม่มีอุปกรณ์');
+  }
 
+  if (sameItem) {
+
+    //check
     storageItem.amount -= parseInt(itemamount);
     await storageItem.save();
 
-    if (sameItem.amount == 0 ) {
-      await sameItem.delete();
-    }
-    else if (storageItem.amount < 0) {
+    if (storageItem.amount < 0) {
       storageItem.amount += parseInt(itemamount);
       await storageItem.save();
-
       return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
 
     }
+    //update
     else {
-      await sameItem.save();
+      sameItem.amount += parseInt(itemamount);
+
+      if (sameItem.amount == 0 ) {
+        await sameItem.delete();
+      }
+      else{
+        await sameItem.save();
+      }
+      
     }
     
   } 
@@ -196,9 +202,18 @@ router.post('/borrowIndex', async (req, res) => {
       amount: itemamount
     });
 
+    //check
     storageItem.amount -= parseInt(itemamount);
     await storageItem.save();
-    await borrowstorage.save();
+    if (storageItem.amount < 0) {
+      storageItem.amount += parseInt(itemamount);
+      await storageItem.save();
+      return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+    }
+
+    else {
+      await borrowstorage.save();
+    }
   }
 
   return res.render('index');
