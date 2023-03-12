@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/overreturn.css')
+    title overreturn
+  
+  body 
+    .container
+      .main
+        .user 
+          h1 ชื่อ: #{admin.name}
+          h1 ฝ่าย: ผู้ดูแล
+        
+        .navbar 
+          a(href="/storage") คลังอุปกรณ์
+          a(href="/adminIndex") เพิ่ม-ลด อุปกรณ์
+          a(href="/showborrow") แสดงค้างการคืน
+
+        .logout
+          a(href="/logout") Logout 
+
+
+      .page 
+
+        .storage
+          h1 แสดงค้างการคืน
+
+        .title 
+          a1 ชื่อคนยืม
+          a1 อุปกรณ์
+          a1 จำนวน
+
+        .inpageStorage 
+          
+            each store in listStorage
+              .equipmentData 
+                .nameEquipment
+                  p1 #{store.Nameuser}
+                .nameEquipment
+                  p1 #{store.name}
+                .amountEquipment
+                  p1 #{store.amount}

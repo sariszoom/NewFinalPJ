@@ -66,6 +66,15 @@ router.get('/overreturn', (req, res) => {
   // res.render('storage');
 });
 
+router.get('/showborrow', (req, res) => {
+
+  BorrowStorage.find({},function(err, store){
+    res.render('showborrow', { admin: nameAdmin,
+      listStorage: store
+     });
+  })
+});
+
 router.get('/logout', (req, res) => {
   // req.session.destroy();
   res.redirect('/login');
