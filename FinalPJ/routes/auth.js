@@ -130,10 +130,9 @@ router.post('/addIndex', async (req, res) => {
     if (sameItem.amount == 0) {
       await sameItem.delete()
     }
-    // else if (sameItem.amount < 0) {
-    //   return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
-
-    // }
+    else if (sameItem.amount < 0) {
+      return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+    }
     else {
       await sameItem.save();
     }
@@ -147,6 +146,12 @@ router.post('/addIndex', async (req, res) => {
     });
 
     await storage.save();
+
+    //check
+    if (storage.amount <= 0) {
+      await storage.delete()
+      return res.status(400).send('กรุณากรอกข้อมูลให้ถูกต้อง');
+    }
   }
 
   return res.render('adminIndex', { admin: nameAdmin });
